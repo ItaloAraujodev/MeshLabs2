@@ -1,0 +1,153 @@
+.box {
+  border-radius: 57px;
+  padding: 2px;
+  margin-left: 2rem;
+}
+
+.box-container {
+  display: flex;
+}
+
+.box-context {
+  background-color: #181B2D;
+  width: 100%;
+  height: 100%;
+  border-radius: 57px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.box-context img {
+  width: 40%;
+  height: 40%;
+}
+
+.box-context h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.slider {
+  background: #181B2D;
+  height: auto;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+}
+
+.slider::before, .slider::after {
+  background: linear-gradient(to right, #181B2D 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+  
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slider-track {
+  display: flex;
+  width: calc(24rem * 18);
+  animation: scroll 40s linear infinite;
+
+}
+
+.slider .slide-track:hover {
+  animation-play-state: paused;
+}
+
+.slider .box {
+  width: 24rem;
+  height: 20rem;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(calc(-24rem * 9));
+  }
+}
+
+@media screen and (min-width: 360px){
+  
+  .box {
+      width: 12rem !important;
+      height: 10rem !important;
+      border-radius: 32px;
+  }
+
+  .slider .slider-track {
+      width: calc(12rem * 18);
+      animation: scroll 60s linear infinite;
+  }
+
+  .box-context {
+      border-radius: 32px !important;
+  }
+
+  .box-context h3 {
+      font-size: 14px;
+      padding: 0 6px;
+  }
+
+  @keyframes scroll {
+      0% {
+          transform: translateX(0);
+      }
+  
+      100% {
+          transform: translateX(calc(-12rem * 9));
+      }
+  }
+}
+
+
+@media screen and (min-width: 768px){
+  .box {
+      width: 24rem !important;
+      height: 20rem !important;
+      border-radius: 57px;
+  }
+
+  .box-context {
+      border-radius: 57px !important;
+  }
+
+  .box-context h3 {
+      font-size: 24px;
+  }
+
+  .slider .slider-track {
+      width: calc(24rem * 18);
+  }
+
+  @keyframes scroll {
+      0% {
+          transform: translateX(0);
+      }
+  
+      100% {
+          transform: translateX(calc(-24rem * 9));
+      }
+  }
+}
+
