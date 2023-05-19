@@ -2,7 +2,13 @@ import PropTypes from 'prop-types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Produto = ({ imgProp, nameProp, linkProp }: any) => {
+interface ProductProps {
+  imgProp: string
+  nameProp: string
+  linkProp: string
+}
+
+const Produto = ({ imgProp, nameProp, linkProp }: ProductProps) => {
   return (
     <>
       <div
